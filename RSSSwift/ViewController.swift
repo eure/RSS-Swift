@@ -54,39 +54,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     var entryFlag : Bool = false
     var titleFlag : Bool = false
-    var linkFlag : Bool = false
     var urlFlag : Bool = false
     var currentEntry : Entry!
 
     let entryKey = "entry"
     let titleKey = "title"
     let urlKey   = "url"
-    let linkKey  = "link"
 
     func parserDidStartDocument(parser: NSXMLParser!)
     {
         println("Parse Start")
     }
-    func parser(parser: NSXMLParser!, foundElementDeclarationWithName elementName: String!, model: String!)
-    {
-        println(elementName)
-    }
-    func parser(parser: NSXMLParser!, foundInternalEntityDeclarationWithName name: String!, value: String!){
-        println(value)
-    }
-
+    
     func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: NSDictionary!)
     {
         if elementName == entryKey {
-            println("open \(elementName)")
-
             entryFlag = true
             currentEntry = Entry()
         } else if elementName == titleKey {
             titleFlag = true
-            currentEntry = Entry()
-        } else if elementName == linkKey{
-            linkFlag = true
         } else if elementName == urlKey {
             urlFlag = true
         }
@@ -95,14 +81,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
     {
         if elementName == entryKey {
-            println("close \(elementName)")
-
             entryFlag = false
+            currentEntry.toString()
             entries.addObject(currentEntry)
         } else if elementName == titleKey {
             titleFlag = false
-        } else if elementName == linkKey {
-            linkFlag = false
         } else if elementName == urlKey {
             urlFlag = false
         }
@@ -110,17 +93,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     func parser(parser: NSXMLParser!, foundCharacters string: String!)
     {
-//        println(string)
         if entryFlag {
             if titleFlag {
-                if string.isEmpty == false {
-                    var tmpString : String? = currentEntry.title;
-
-                    currentEntry.title = tmpString! + string
-                }
-
-            } else if linkFlag {
-                currentEntry.link = string
+                var tmpString : String! = currentEntry.title;
+                currentEntry.title = tmpString ? tmpString + string : string
+            } else if urlFlag {
+                currentEntry.url = string
             }
         }
     }

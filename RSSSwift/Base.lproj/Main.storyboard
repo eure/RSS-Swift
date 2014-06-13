@@ -170,12 +170,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="338"/>
+            <point key="canvasLocation" x="174" y="299"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="YsF-EF-7oS">
             <objects>
-                <viewController id="5cS-NN-ZJE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="5cS-NN-ZJE" customClass="DetailViewController" customModule="RSSSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bx4-89-x6F"/>
                         <viewControllerLayoutGuide type="bottom" id="zeV-gn-jkb"/>
@@ -183,13 +183,47 @@
                     <view key="view" contentMode="scaleToFill" id="wY0-Mc-rBc">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXG-3v-5DT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XXG-3v-5DT" firstAttribute="top" secondItem="wY0-Mc-rBc" secondAttribute="top" id="9Ay-H5-Nbe"/>
+                            <constraint firstItem="XXG-3v-5DT" firstAttribute="leading" secondItem="wY0-Mc-rBc" secondAttribute="leading" id="QZk-HW-nKy"/>
+                            <constraint firstAttribute="trailing" secondItem="XXG-3v-5DT" secondAttribute="trailing" id="bQ1-FV-geB"/>
+                            <constraint firstItem="zeV-gn-jkb" firstAttribute="top" secondItem="XXG-3v-5DT" secondAttribute="bottom" id="zrn-ep-Lu6"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XXG-3v-5DT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9Ay-H5-Nbe"/>
+                                <exclude reference="QZk-HW-nKy"/>
+                                <exclude reference="bQ1-FV-geB"/>
+                                <exclude reference="zrn-ep-Lu6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XXG-3v-5DT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9Ay-H5-Nbe"/>
+                                <include reference="QZk-HW-nKy"/>
+                                <include reference="bQ1-FV-geB"/>
+                                <include reference="zrn-ep-Lu6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGf-nN-pss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="338"/>
+            <point key="canvasLocation" x="733.5" y="299"/>
         </scene>
     </scenes>
 </document>
