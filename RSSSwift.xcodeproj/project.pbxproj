@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4B7346B8194AB74D00E09DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346B7194AB74D00E09DE7 /* AppDelegate.swift */; };
-		4B7346BB194AB74D00E09DE7 /* RSSSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346B9194AB74D00E09DE7 /* RSSSwift.xcdatamodeld */; };
 		4B7346BD194AB74D00E09DE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346BC194AB74D00E09DE7 /* ViewController.swift */; };
 		4B7346C0194AB74D00E09DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7346BE194AB74D00E09DE7 /* Main.storyboard */; };
 		4B7346C2194AB74D00E09DE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7346C1194AB74D00E09DE7 /* Images.xcassets */; };
@@ -32,7 +31,6 @@
 		4B7346B2194AB74D00E09DE7 /* RSSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7346B6194AB74D00E09DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B7346B7194AB74D00E09DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B7346BA194AB74D00E09DE7 /* RSSSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSSwift.xcdatamodel; sourceTree = "<group>"; };
 		4B7346BC194AB74D00E09DE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B7346BF194AB74D00E09DE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B7346C1194AB74D00E09DE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				4B7346E1194ACBA500E09DE7 /* Entry.swift */,
 				4B7346BE194AB74D00E09DE7 /* Main.storyboard */,
 				4B7346C1194AB74D00E09DE7 /* Images.xcassets */,
-				4B7346B9194AB74D00E09DE7 /* RSSSwift.xcdatamodeld */,
 				4B7346B5194AB74D00E09DE7 /* Supporting Files */,
 			);
 			path = RSSSwift;
@@ -223,7 +220,6 @@
 				4B7346E2194ACBA500E09DE7 /* Entry.swift in Sources */,
 				4B7346DE194AC98600E09DE7 /* TableViewCell.swift in Sources */,
 				4B7346BD194AB74D00E09DE7 /* ViewController.swift in Sources */,
-				4B7346BB194AB74D00E09DE7 /* RSSSwift.xcdatamodeld in Sources */,
 				4B7346B8194AB74D00E09DE7 /* AppDelegate.swift in Sources */,
 				4B7346D8194AB80D00E09DE7 /* DetailViewController.swift in Sources */,
 			);
@@ -425,19 +421,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4B7346B9194AB74D00E09DE7 /* RSSSwift.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4B7346BA194AB74D00E09DE7 /* RSSSwift.xcdatamodel */,
-			);
-			currentVersion = 4B7346BA194AB74D00E09DE7 /* RSSSwift.xcdatamodel */;
-			path = RSSSwift.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4B7346AA194AB74D00E09DE7 /* Project object */;
 }
