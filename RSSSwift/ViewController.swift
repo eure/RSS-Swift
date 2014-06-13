@@ -52,6 +52,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         var cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as TableViewCell
         let entry : Entry! = entries.objectAtIndex(indexPath.row) as Entry
         cell.textLabel.text = entry.title
+        cell.textLabel.font = UIFont.systemFontOfSize(12)
+        cell.textLabel.numberOfLines = 0
         return cell
     }
 

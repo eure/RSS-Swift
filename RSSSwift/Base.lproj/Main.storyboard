@@ -118,70 +118,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qy2-JV-5ff" id="ALX-VU-2Vf">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2K-8L-GpP">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="Hag-hC-bvY"/>
-                                                        <constraint firstAttribute="height" constant="20.5" id="uWB-gR-vGv"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="Hag-hC-bvY"/>
-                                                            <exclude reference="uWB-gR-vGv"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="Hag-hC-bvY"/>
-                                                            <include reference="uWB-gR-vGv"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4i-yS-9SQ">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="254" y="6" width="46" height="30"/>
-                                                    </variation>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="F2K-8L-GpP" secondAttribute="centerY" id="rZD-r0-zTo"/>
-                                                <constraint firstItem="F2K-8L-GpP" firstAttribute="leading" secondItem="ALX-VU-2Vf" secondAttribute="leading" constant="20" id="wvg-61-QAP"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="F2K-8L-GpP"/>
-                                                    <exclude reference="z4i-yS-9SQ"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="rZD-r0-zTo"/>
-                                                    <exclude reference="wvg-61-QAP"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="F2K-8L-GpP"/>
-                                                    <include reference="z4i-yS-9SQ"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="constraints">
-                                                    <include reference="rZD-r0-zTo"/>
-                                                    <include reference="wvg-61-QAP"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="F2K-8L-GpP" id="YHr-LB-c70"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
