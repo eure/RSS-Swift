@@ -9,7 +9,7 @@
 import UIKit
 
 class Request: NSObject {
-    var session : NSURLSession?
+    var session : NSURLSession!
     init()
     {
         super.init()
@@ -21,8 +21,13 @@ class Request: NSObject {
 
     }
     func foo(){
-        var task : NSURLSessionDataTask = self.session.dataTaskWithHTTPGetRequest(nil, completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void)?{
+        let url : NSURL = NSURL(string: "")
+        let request : NSURLRequest = NSURLRequest(URL: url)
 
-        })
+        func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
+
+        }
+
+        var task : NSURLSessionDataTask = self.session.dataTaskWithRequest(request, completionHandler:completionBlock)
     }
 }

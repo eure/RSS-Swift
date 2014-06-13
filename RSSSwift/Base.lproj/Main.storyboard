@@ -13,6 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JYz-Du-V0M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8nQ-so-Plt">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-Gr-vMa">
@@ -21,7 +22,6 @@
                                     <constraint firstAttribute="height" constant="30" id="2ca-AD-frS"/>
                                     <constraint firstAttribute="width" constant="300" id="8eu-VL-bAm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qy2-JV-5ff">
+                                    <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="Qy2-JV-5ff" customClass="TableViewCell" customModule="RSSSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qy2-JV-5ff" id="ALX-VU-2Vf">
@@ -181,6 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zeV-gn-jkb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wY0-Mc-rBc">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

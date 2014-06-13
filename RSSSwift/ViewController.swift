@@ -14,6 +14,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let url : NSURL = NSURL(string: "http://api.dribbble.com/shots/everyone")
+        let request : NSURLRequest = NSURLRequest(URL: url)
+
+        func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
+
+        }
+
+        var task : NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:completionBlock)
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,7 +45,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
-        return nil;
+        var cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as TableViewCell
+        return cell
     }
 
 }
