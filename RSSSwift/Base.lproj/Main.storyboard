@@ -125,7 +125,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                        <rect key="frame" x="20" y="11" width="42" height="20.5"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -161,10 +161,10 @@
                                 <exclude reference="zip-yZ-zkW"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1G6-qy-69a"/>
                                 <exclude reference="ITL-Ef-FLG"/>
                                 <exclude reference="mdI-dJ-Y88"/>
                                 <exclude reference="vUv-TF-6qF"/>
-                                <exclude reference="1G6-qy-69a"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -174,10 +174,10 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="1G6-qy-69a"/>
                                 <include reference="ITL-Ef-FLG"/>
                                 <include reference="mdI-dJ-Y88"/>
                                 <include reference="vUv-TF-6qF"/>
-                                <include reference="1G6-qy-69a"/>
                             </mask>
                         </variation>
                     </view>
@@ -220,10 +220,10 @@
                                 <exclude reference="yQ8-uC-Kau"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="PV3-HH-HpB"/>
                                 <exclude reference="HwN-c6-8Mx"/>
                                 <exclude reference="O0j-ty-XT9"/>
                                 <exclude reference="sSJ-Sx-F4F"/>
-                                <exclude reference="PV3-HH-HpB"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -231,10 +231,10 @@
                                 <include reference="yQ8-uC-Kau"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="PV3-HH-HpB"/>
                                 <include reference="HwN-c6-8Mx"/>
                                 <include reference="O0j-ty-XT9"/>
                                 <include reference="sSJ-Sx-F4F"/>
-                                <include reference="PV3-HH-HpB"/>
                             </mask>
                         </variation>
                     </view>

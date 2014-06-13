@@ -45,7 +45,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         var cell : TableViewCell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as TableViewCell
         let entry : Entry! = entries.objectAtIndex(indexPath.row) as Entry
-        entry.toString()
         cell.textLabel.text = entry.title
         return cell
     }
@@ -57,8 +56,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         var entry : Entry! = entries.objectAtIndex(indexPath.row) as Entry
         controller.entry = entry
         self.navigationController.pushViewController(controller, animated: true)
-
-        println("tap")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     // NSXMLParserDelegate
@@ -93,7 +91,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if elementName == entryKey {
             entryFlag = false
-            currentEntry.toString()
             entries.addObject(currentEntry)
         } else if elementName == titleKey {
             titleFlag = false

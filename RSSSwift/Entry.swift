@@ -17,9 +17,4 @@ class Entry: NSObject {
         super.init()
 
     }
-
-    func toString() {
-        println(self.title)
-        println(self.url)
-    }
 }
