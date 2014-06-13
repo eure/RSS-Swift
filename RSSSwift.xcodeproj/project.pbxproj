@@ -16,7 +16,6 @@
 		4B7346D8194AB80D00E09DE7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346D7194AB80D00E09DE7 /* DetailViewController.swift */; };
 		4B7346DE194AC98600E09DE7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346DD194AC98600E09DE7 /* TableViewCell.swift */; };
 		4B7346E2194ACBA500E09DE7 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346E1194ACBA500E09DE7 /* Entry.swift */; };
-		4B7346E4194ACD5F00E09DE7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7346E3194ACD5F00E09DE7 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +42,6 @@
 		4B7346D7194AB80D00E09DE7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4B7346DD194AC98600E09DE7 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4B7346E1194ACBA500E09DE7 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		4B7346E3194ACD5F00E09DE7 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				4B7346D7194AB80D00E09DE7 /* DetailViewController.swift */,
 				4B7346DD194AC98600E09DE7 /* TableViewCell.swift */,
 				4B7346E1194ACBA500E09DE7 /* Entry.swift */,
-				4B7346E3194ACD5F00E09DE7 /* Request.swift */,
 				4B7346BE194AB74D00E09DE7 /* Main.storyboard */,
 				4B7346C1194AB74D00E09DE7 /* Images.xcassets */,
 				4B7346B9194AB74D00E09DE7 /* RSSSwift.xcdatamodeld */,
@@ -227,7 +224,6 @@
 				4B7346DE194AC98600E09DE7 /* TableViewCell.swift in Sources */,
 				4B7346BD194AB74D00E09DE7 /* ViewController.swift in Sources */,
 				4B7346BB194AB74D00E09DE7 /* RSSSwift.xcdatamodeld in Sources */,
-				4B7346E4194ACD5F00E09DE7 /* Request.swift in Sources */,
 				4B7346B8194AB74D00E09DE7 /* AppDelegate.swift in Sources */,
 				4B7346D8194AB80D00E09DE7 /* DetailViewController.swift in Sources */,
 			);
@@ -417,6 +413,7 @@
 				4B7346D3194AB74D00E09DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B7346D4194AB74D00E09DE7 /* Build configuration list for PBXNativeTarget "RSSSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +422,7 @@
 				4B7346D6194AB74D00E09DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

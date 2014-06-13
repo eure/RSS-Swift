@@ -9,5 +9,19 @@
 import UIKit
 
 class Entry: NSObject {
-   
+    var id : String!
+    var title : String!
+    var link : String!
+    var url : String!
+    var foo : String!
+    init() {
+        super.init()
+        foo = "muukii"
+    }
+
+    func toString() {
+        println(self.title)
+        println(self.link)
+        println(self.foo)
+    }
 }
