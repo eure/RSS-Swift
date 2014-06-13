@@ -13,14 +13,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet var tableView : UITableView
 
     var entries : NSMutableArray!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        entries = NSMutableArray()
-
-        let url : NSURL = NSURL(string: "http://qiita.com/tags/Swift/feed.atom")
-        let request : NSURLRequest = NSURLRequest(URL:url)
+    var rssUrl : NSURL!
+    {
+    didSet{
+        let request : NSURLRequest = NSURLRequest(URL:self.rssUrl)
         func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
             var parser : NSXMLParser = NSXMLParser(data: data)
             parser.delegate = self;
@@ -28,7 +24,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         var task : NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:completionBlock)
         task.resume()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        entries = NSMutableArray()
+
+        let url : NSURL = NSURL(string: "http://qiita.com/tags/Swift/feed.atom")
+        self.rssUrl = url
+               // Do any additional setup after loading the view, typically from a nib.
     }
 
     // TableView DataSource
@@ -103,8 +109,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if entryFlag {
             if titleFlag {
-                var tmpString : String! = currentEntry.title;
-                currentEntry.title = tmpString ? tmpString + string : string
+                var tmpString : String? = currentEntry.title;
+                currentEntry.title = tmpString? ? tmpString! + string : string
             } else if urlFlag {
                 currentEntry.url = string
             }

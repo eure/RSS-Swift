@@ -179,6 +179,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="F2K-8L-GpP" id="YHr-LB-c70"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
