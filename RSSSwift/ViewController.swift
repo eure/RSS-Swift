@@ -50,6 +50,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
 
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
+    {
+        var controller : DetailViewController = self.storyboard.instantiateViewControllerWithIdentifier("DetailViewController")
+         as DetailViewController
+        var entry : Entry! = entries.objectAtIndex(indexPath.row) as Entry
+        controller.entry = entry
+        self.navigationController.pushViewController(controller, animated: true)
+
+        println("tap")
+    }
+
     // NSXMLParserDelegate
 
     var entryFlag : Bool = false

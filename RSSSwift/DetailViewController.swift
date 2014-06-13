@@ -9,5 +9,15 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet var webView : UIWebView
+
+    var entry :Entry!
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        var request : NSURLRequest = NSURLRequest(URL:NSURL(string: entry.url))
+        self.webView.loadRequest(request)
+    }
 
 }
