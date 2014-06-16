@@ -15,26 +15,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var entries : NSMutableArray!
     var rssUrl : NSURL!
     {
-    didSet{
-        let request : NSURLRequest = NSURLRequest(URL:self.rssUrl)
-        func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
-            var parser : NSXMLParser = NSXMLParser(data: data)
-            parser.delegate = self;
-            parser.parse()
+        didSet{
+            let request : NSURLRequest = NSURLRequest(URL:self.rssUrl)
+            func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
+                var parser : NSXMLParser = NSXMLParser(data: data)
+                parser.delegate = self;
+                parser.parse()
+            }
+            var task : NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:completionBlock)
+            task.resume()
         }
-        var task : NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:completionBlock)
-        task.resume()
-    }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         entries = NSMutableArray()
-
         let url : NSURL = NSURL(string: "http://qiita.com/tags/Swift/feed.atom")
         self.rssUrl = url
-               // Do any additional setup after loading the view, typically from a nib.
     }
 
     // TableView DataSource
@@ -42,6 +39,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         return 1;
     }
+
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
         return self.entries.count;
@@ -69,10 +67,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     // NSXMLParserDelegate
 
-    var entryFlag : Bool = false
-    var titleFlag : Bool = false
-    var urlFlag : Bool = false
-    var currentEntry : Entry!
+    var parseKey : String!
+    var tmpEntry : Entry!
 
     let entryKey = "entry"
     let titleKey = "title"
@@ -80,48 +76,40 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     func parserDidStartDocument(parser: NSXMLParser!)
     {
-        println("Parse Start")
+        println("parse start")
+        entries = NSMutableArray()
     }
-    
+
     func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: NSDictionary!)
     {
+        parseKey = nil
         if elementName == entryKey {
-            entryFlag = true
-            currentEntry = Entry()
-        } else if elementName == titleKey {
-            titleFlag = true
-        } else if elementName == urlKey {
-            urlFlag = true
+            tmpEntry = Entry()
+            entries.addObject(tmpEntry)
+        } else {
+            parseKey = elementName
         }
     }
 
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
     {
-        if elementName == entryKey {
-            entryFlag = false
-            entries.addObject(currentEntry)
-        } else if elementName == titleKey {
-            titleFlag = false
-        } else if elementName == urlKey {
-            urlFlag = false
-        }
+        parseKey = nil;
     }
 
     func parser(parser: NSXMLParser!, foundCharacters string: String!)
     {
-        if entryFlag {
-            if titleFlag {
-                var tmpString : String? = currentEntry.title;
-                currentEntry.title = tmpString? ? tmpString! + string : string
-            } else if urlFlag {
-                currentEntry.url = string
+        if parseKey? == titleKey {
+            if tmpEntry {
+                var tmpString : String? = tmpEntry?.title;
+                tmpEntry.title = tmpString? ? tmpString! + string : string
             }
+        } else if parseKey? == urlKey {
+            tmpEntry.url = string
         }
     }
 
     func parserDidEndDocument(parser: NSXMLParser!)
     {
-        println("Parse End　\(self.entries)")
         self.tableView.reloadData()
     }
 }
