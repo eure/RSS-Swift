@@ -19,7 +19,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             let request : NSURLRequest = NSURLRequest(URL:self.rssUrl)
             func completionBlock(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void {
                 var parser : NSXMLParser = NSXMLParser(data: data)
-                parser.delegate = self;
+                parser.delegate = self
                 parser.parse()
             }
             var task : NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler:completionBlock)
@@ -37,12 +37,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     // TableView DataSource
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int
     {
-        return 1;
+        return 1
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
-        return self.entries.count;
+        return self.entries.count
     }
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
@@ -93,14 +93,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!)
     {
-        parseKey = nil;
+        parseKey = nil
     }
 
     func parser(parser: NSXMLParser!, foundCharacters string: String!)
     {
         if parseKey? == titleKey {
             if tmpEntry {
-                var tmpString : String? = tmpEntry?.title;
+                var tmpString : String? = tmpEntry?.title
                 tmpEntry.title = tmpString? ? tmpString! + string : string
             }
         } else if parseKey? == urlKey {
